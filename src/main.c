@@ -81,7 +81,7 @@ void on_connected(uv_stream_t *server, int status)
   unicast(user, sysmsg);
   snprintf(sysmsg, sizeof(sysmsg), "[your ip addr: %s]\n\n", user->ip);
   unicast(user, sysmsg);
-  broadcast(user, "chat-server > %s joined!\n%d hacker online\n", user->ip, cnt);
+  broadcast(user, "chat-server > %s joined!\nchat-server> %d hacker online\n", user->ip, cnt);
 
   uv_read_start((uv_stream_t *)&user->handle, on_alloc, on_read);
 }
